@@ -1,6 +1,7 @@
-import Foundation
+import UIKit
 
 struct Word {
+    
     let unscrambled: String
 
     var scrambled: String {

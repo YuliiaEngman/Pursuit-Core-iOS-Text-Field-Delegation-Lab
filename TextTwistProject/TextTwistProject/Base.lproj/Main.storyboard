@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,72 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TextTwistProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text Twist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lC-2M-q6c">
+                                <rect key="frame" x="20" y="44" width="374" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oFi-ze-W5k">
+                                <rect key="frame" x="132" y="300" width="151" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="userEntersLetters:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="crj-Xb-TOY"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V4b-mz-VeE">
+                                <rect key="frame" x="132" y="420" width="151" height="47"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <state key="normal" title="New Word">
+                                    <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectNewWord:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bl1-c0-pxB"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label with random word" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZzF-MC-K4r">
+                                <rect key="frame" x="20" y="194" width="374" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="oFi-ze-W5k" firstAttribute="top" secondItem="ZzF-MC-K4r" secondAttribute="bottom" constant="70" id="3H8-vE-xDM"/>
+                            <constraint firstItem="ZzF-MC-K4r" firstAttribute="top" secondItem="3lC-2M-q6c" secondAttribute="bottom" constant="90" id="BAc-Hl-Szc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oFi-ze-W5k" secondAttribute="trailing" constant="131" id="JYL-nS-sDv"/>
+                            <constraint firstItem="V4b-mz-VeE" firstAttribute="top" secondItem="oFi-ze-W5k" secondAttribute="bottom" constant="86" id="Kc9-ea-oT2"/>
+                            <constraint firstItem="3lC-2M-q6c" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Ln3-2N-eZI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZzF-MC-K4r" secondAttribute="trailing" constant="20" id="Unb-zK-w0Q"/>
+                            <constraint firstItem="V4b-mz-VeE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="132" id="Xgc-OB-QMs"/>
+                            <constraint firstItem="ZzF-MC-K4r" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="aKq-f2-3uz"/>
+                            <constraint firstItem="ZzF-MC-K4r" firstAttribute="top" secondItem="3lC-2M-q6c" secondAttribute="bottom" constant="90" id="asF-S6-qGM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="V4b-mz-VeE" secondAttribute="bottom" constant="395" id="dWS-B3-pYJ"/>
+                            <constraint firstItem="oFi-ze-W5k" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="132" id="h85-Ta-9up"/>
+                            <constraint firstItem="V4b-mz-VeE" firstAttribute="top" secondItem="oFi-ze-W5k" secondAttribute="bottom" constant="86" id="m0N-sh-B69"/>
+                            <constraint firstItem="3lC-2M-q6c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="qC3-iN-xOg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3lC-2M-q6c" secondAttribute="trailing" constant="20" id="qW9-HY-pmv"/>
+                            <constraint firstItem="oFi-ze-W5k" firstAttribute="top" secondItem="ZzF-MC-K4r" secondAttribute="bottom" constant="70" id="t9e-bh-jx2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="V4b-mz-VeE" secondAttribute="trailing" constant="131" id="wme-md-Odh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="buttonNewWord" destination="V4b-mz-VeE" id="njW-Dt-tbf"/>
+                        <outlet property="labelWithRandonWord" destination="ZzF-MC-K4r" id="RnW-K7-0xb"/>
+                        <outlet property="myTextField" destination="oFi-ze-W5k" id="da7-hs-YgD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="112.5"/>
         </scene>
     </scenes>
 </document>
